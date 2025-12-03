@@ -11,7 +11,9 @@ export default function About() {
 	const isInView = useInView(ref, { once: true, margin: "-100px" });
 
 	const ADDRESS = "ASDLKJASDLKJASDO*AUSD(*AUSDOIAJSDLKJ";
-	const DEXSCREENER_URL = "https://dexscreener.com/solana/asxuurmabxgqpe5pyshresrkba1nmpfnmwgkhi4cqqrh" + "?embed=1&amp;theme=dark&amp;trades=0&amp;info=0";
+	const DEXSCREENER_URL =
+		"https://dexscreener.com/solana/asxuurmabxgqpe5pyshresrkba1nmpfnmwgkhi4cqqrh" +
+		"?embed=1&amp;theme=dark&amp;trades=0&amp;info=0";
 	return (
 		<section ref={ref} className='py-24 px-4 relative'>
 			{/* Subtle background elements */}
@@ -47,16 +49,25 @@ export default function About() {
 						animate={isInView ? { opacity: 1, x: 0 } : {}}
 						transition={{ duration: 0.6, delay: 0.2 }}
 					>
-						<p className='text-lg text-foreground/90 leading-relaxed mb-4'>
-							$CEO is what happens when the internet gets bored and discovers blockchain technology. We took the
-							spirit of every unhinged Discord server, combined it with{" "}
-							<span className='text-accent-purple font-medium'>degenerate trading energy</span>, and somehow made
-							it tradeable.
+						<p className='text-md text-foreground/90 leading-relaxed mb-4'>
+							Jensen Huang was 30 years old when he founded NVIDIA in 1993. $CEO is an ode to the dream of
+							dreams; putting every part of yourself on the line to create the most successful company in the
+							history of the human race.
+							<br />
+							<br />
+							Solana is home. It's where community thrives, where generational wealth is made and where movements
+							are born from memetic culture like the world has never seen before.
+							<br />
+							<br />
+							What better person is there to lead as the $CEO of Solana?
 						</p>
-						<p className='text-lg text-foreground/90 leading-relaxed'>
-							Is it a currency? Is it a lifestyle? Is it a cry for help?{" "}
-							<span className='text-accent-teal font-semibold'>Yes.</span>
+						{/* <p className='text-lg text-foreground/90 leading-relaxed mb-4'>
+							Of all the things that I value most about $CEO, intelligence is not top of that list. My ability to
+							endure pain and suffering, my ability to work on something for a very, very long period of time, my
+							ability to handle setbacks and see the opportunity just around the corner, I consider to be my
+							memetic superpowers.
 						</p>
+						<p className='text-lg font-light text-right text-foreground/90 leading-relaxed'>- Jensen Huang</p> */}
 					</motion.div>
 
 					<motion.div
@@ -98,8 +109,9 @@ export default function About() {
 					transition={{ duration: 0.6, delay: 0.5 }}
 				>
 					<p className='text-center text-sm text-muted-foreground'>
-						<span className='text-accent-purple font-medium'>Not financial advice</span> — obviously. We're just a
-						bunch of nerds having fun. DYOR or whatever.
+						<span className='text-accent-purple font-medium'>Not financial advice</span> — obviously.
+						<br /> We're just a bunch of AI nerds building GPUs from scratch in our moms basements. <br />
+						DYOR or whatever.
 					</p>
 				</motion.div>
 			</div>

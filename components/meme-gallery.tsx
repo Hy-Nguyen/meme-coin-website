@@ -29,11 +29,11 @@ export default function MemeGallery() {
 					animate={isInView ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.6, delay: 0.1 }}
 				>
-					<span className='text-gradient'>Certified Memes</span>
+					<span className='text-gradient'>Certified $CEO Memes</span>
 				</motion.h2>
 
 				{/* Meme grid */}
-				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
+				<div className='grid grid-cols-2 lg:grid-cols-3 gap-5'>
 					{memes.slice(0, limit).map((meme, index) => (
 						<motion.div
 							key={index}

@@ -19,6 +19,7 @@ export default function Home() {
 				<TextCarousel />
 				<About />
 				<MemeGallery />
+				
 				<Footer />
 			</div>
 		</main>

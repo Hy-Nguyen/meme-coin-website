@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
 	return (
-		<section className='relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden'>
+		<section className='relative min-h-[85dvh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden'>
 			{/* Subtle background glow */}
 			<div className='absolute inset-0 overflow-hidden'>
 				<div className='absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-purple/10 rounded-full blur-[120px]' />
@@ -28,7 +28,7 @@ export default function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.15 }}
 			>
-				The Premium Meme Coin Experience
+				The Infinity CEO you've always wanted
 			</motion.p>
 
 			<motion.p
@@ -37,14 +37,14 @@ export default function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.3 }}
 			>
-				Powered by vibes, memes, and an alarming amount of confidence.
+				Powered by GPUs, sweat, and an alarming amount of Mcdonalds employees.
 				<br />
-				<span className='text-foreground/60 italic'>Degen fintech... but make it premium.</span>
+				<span className='text-foreground/60 italic'>Memetics on Solana, Internet Capital Markets.</span>
 			</motion.p>
 
 			{/* Mascot */}
 			<motion.div
-				className='relative w-56 h-56 md:w-72 md:h-72 mb-12'
+				className='relative w-56 h-56 md:size-96 mb-12'
 				initial={{ opacity: 0, scale: 0.9 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ duration: 0.8, delay: 0.4 }}
@@ -58,7 +58,7 @@ export default function Hero() {
 					<Image
 						src='/ceo/CEO.jpg'
 						alt='$CEO Mascot'
-						width={288}
+						width={500}
 						height={288}
 						className='relative z-10 drop-shadow-2xl'
 					/>
