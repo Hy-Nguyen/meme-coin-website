@@ -130,7 +130,8 @@ export default function About() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 pt-10 sm:gap-8 lg:flex-row lg:gap-12">
         <div className="border-accent bg-background/70 flex w-fit flex-row gap-2 rounded-md border-2 px-4 py-2 shadow-lg">
-          <h1>CA: {ADDRESS}</h1>
+          <h1 className='hidden md:block'>CA: {ADDRESS}</h1>
+          <h1 className='block md:hidden'>CA: {ADDRESS.slice(0, 10)}...{ADDRESS.slice(-10)}</h1>
           <button
             onClick={() => {
               navigator.clipboard.writeText(ADDRESS);
