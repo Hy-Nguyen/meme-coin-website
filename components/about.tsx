@@ -11,9 +11,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const ADDRESS = '1234';
-  const DEXSCREENER_URL =
-    'https://dexscreener.com/solana/asxuurmabxgqpe5pyshresrkba1nmpfnmwgkhi4cqqrh' +
-    '?embed=1&amp;theme=dark&amp;trades=0&amp;info=0';
+  
   return (
     <section ref={ref} className="relative px-4 py-24">
       {/* Subtle background elements */}

@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: '$CEO — Huangonsol Token',
+  title: '$CEO on Solana',
   description: "Welcome to $CEO. The Infinity CEO you've always wanted",
 
   icons: {
