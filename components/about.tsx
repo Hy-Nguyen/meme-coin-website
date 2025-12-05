@@ -10,8 +10,8 @@ export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const ADDRESS = 'NEWCAADDRESSHERE!!';
-  
+  const ADDRESS = 'BuX9TN5doE5hCqpcmqMKYkidXC8zgBK5wHHKujdaAbiQ';
+
   return (
     <section ref={ref} className="relative px-4 py-24">
       {/* Subtle background elements */}
@@ -118,7 +118,7 @@ export default function About() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 pt-10 sm:gap-8 lg:flex-row lg:gap-12">
         <div className="border-accent aspect-[16/10] w-full overflow-hidden rounded-lg border-4 shadow-2xl sm:aspect-[16/9]">
           <iframe
-            src="https://dexscreener.com/solana/6v8vmorspb7qyg34gnq6bcxituhuu2rs6drjggeevzcx?embed=1&amp;theme=dark&amp;trades=0&amp;info=0"
+            src={`https://dexscreener.com/solana/${ADDRESS}?embed=1&theme=dark&trades=0&info=0`}
             className="h-full w-full"
             title="DexScreener Live Chart"
             allowFullScreen
