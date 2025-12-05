@@ -13,7 +13,7 @@ export default function MemeGallery() {
 
   const memes = Array.from({ length: 43 }, (_, i) => ({
     id: i + 1,
-    query: `ceo-${i + 1}.png`,
+    query: `ceo-${i + 1}.webp`,
     priority: priorityIndexes.includes(i + 1),
   }));
 

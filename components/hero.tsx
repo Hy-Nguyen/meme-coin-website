@@ -52,7 +52,7 @@ export default function Hero() {
         >
           <div className="bg-accent-purple/20 absolute inset-0 scale-110 rounded-full blur-2xl" />
           <Image
-            src="/ceo/CEO.jpg"
+            src="/ceo/CEO.webp"
             alt="$CEO Mascot"
             width={500}
             height={288}

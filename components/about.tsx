@@ -127,13 +127,7 @@ export default function About() {
           />
         </div>
         <div>
-          <Image
-            src="/ceo/collection/ceo-40.png"
-            alt="DexScreener Live Chart"
-            width={640}
-            height={360}
-            className="rounded-md"
-          />
+          <Image src="/ceo/collection/ceo-40.webp" alt="CEO STONKS" width={640} height={360} className="rounded-md" />
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 pt-10 sm:gap-8 lg:flex-row lg:gap-12">
