@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Telegram } from './socials/telegram';
+import { ShineBorder } from './ui/shine-border';
 
 export default function Hero() {
   return (
@@ -70,7 +72,7 @@ export default function Hero() {
       >
         <motion.button
           key={'buy-button'}
-          className="from-accent-purple to-accent-teal glow-subtle cursor-pointer rounded-xl bg-gradient-to-r px-8 py-3.5 text-base font-semibold text-white"
+          className="from-accent-purple group to-accent-teal glow-subtle relative cursor-pointer rounded-xl bg-gradient-to-r px-8 py-3.5 text-base font-semibold text-white"
           whileHover={{ scale: 1.03, y: -2 }}
           whileTap={{ scale: 0.98 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -78,17 +80,25 @@ export default function Hero() {
             document.querySelector('#buy-ceo')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
+          <ShineBorder
+            className="opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']}
+          />
           Buy $CEO
         </motion.button>
 
-        <motion.button
-          className="border-border bg-card/50 text-foreground hover:border-accent-purple/50 hover:bg-card rounded-xl border px-8 py-3.5 text-base font-semibold transition-colors"
+        <motion.a
+          href="https://t.me/solanasCE0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-border bg-card/50 text-foreground hover:border-accent-purple/50 hover:bg-card relative rounded-xl border px-8 py-3.5 text-base font-semibold transition-colors"
           whileHover={{ scale: 1.03, y: -2 }}
           whileTap={{ scale: 0.98 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
         >
-          Join Community
-        </motion.button>
+          <ShineBorder shineColor={['#A07CFE', '#FE8FB5', '#FFBE7B']} />
+          Join Community <Telegram width={20} className="-mt-1 ml-2 inline-block" />
+        </motion.a>
       </motion.div>
     </section>
   );
