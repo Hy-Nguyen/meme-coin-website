@@ -9,7 +9,13 @@ export default function MemeGallery() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [limit, setLimit] = useState(6);
-  const memes = Array.from({ length: 43 }, (_, i) => ({ id: i + 1, query: `ceo-${i + 1}.png` }));
+  const priorityIndexes = [9, 14, 6, 10, 8, 18]; // your specific indexes
+
+  const memes = Array.from({ length: 43 }, (_, i) => ({
+    id: i + 1,
+    query: `ceo-${i + 1}.png`,
+    priority: priorityIndexes.includes(i + 1),
+  }));
 
   return (
     <section ref={ref} className="relative px-4 py-24">
@@ -34,44 +40,50 @@ export default function MemeGallery() {
 
         {/* Meme grid */}
         <div className="grid grid-cols-2 gap-5 lg:grid-cols-3">
-          {memes.slice(0, limit).map((meme, index) => (
-            <motion.div
-              key={index}
-              className="group relative aspect-square cursor-pointer overflow-hidden rounded-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
-              onMouseEnter={() => setHoveredId(meme.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
+          {memes
+            .sort((a, b) => (a.priority === b.priority ? 0 : a.priority ? -1 : 1))
+            .slice(0, limit)
+            .map((meme, index) => (
               <motion.div
-                className="border-border bg-card h-full w-full overflow-hidden rounded-2xl border"
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                key={index}
+                className="group relative aspect-square cursor-pointer overflow-hidden rounded-2xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: (index % 6) * 0.1 }}
+                onMouseEnter={() => setHoveredId(meme.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                <Image
-                  src={`/ceo/collection/${encodeURIComponent(meme.query)}`}
-                  alt={`Meme ${meme.id}`}
-                  fill
-                  className={`object-cover transition-all duration-500 ${
-                    hoveredId === meme.id ? 'scale-105 grayscale-0' : 'grayscale'
-                  }`}
-                />
-
-                {/* Hover glow overlay */}
                 <motion.div
-                  className="pointer-events-none absolute inset-0 rounded-2xl"
-                  animate={{
-                    boxShadow:
-                      hoveredId === meme.id
-                        ? 'inset 0 0 0 2px oklch(0.65 0.15 280 / 0.5), 0 0 40px -10px oklch(0.65 0.15 280 / 0.4)'
-                        : 'inset 0 0 0 1px transparent',
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
+                  className="border-border bg-card h-full w-full overflow-hidden rounded-2xl border"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
+                  {/* {process.env.NODE_ENV === 'development' && (
+                    <div className="absolute top-4 left-4 z-10">{meme.query}</div>
+                  )} */}
+                  <Image
+                    src={`/ceo/collection/${encodeURIComponent(meme.query)!!}`}
+                    alt={`Meme ${meme.id}`}
+                    fill
+                    className={`object-cover transition-all duration-500 ${
+                      hoveredId === meme.id ? 'scale-105 grayscale-0' : 'grayscale'
+                    }`}
+                  />
+
+                  {/* Hover glow overlay */}
+                  <motion.div
+                    className="pointer-events-none absolute inset-0 rounded-2xl"
+                    animate={{
+                      boxShadow:
+                        hoveredId === meme.id
+                          ? 'inset 0 0 0 2px oklch(0.65 0.15 280 / 0.5), 0 0 40px -10px oklch(0.65 0.15 280 / 0.4)'
+                          : 'inset 0 0 0 1px transparent',
+                    }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
         </div>
 
         {/* View more button */}

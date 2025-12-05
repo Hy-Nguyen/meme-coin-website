@@ -11,8 +11,8 @@ import CryptoPlatforms from '@/components/lenders';
 export default function Home() {
   return (
     <main className="bg-background relative min-h-screen">
-      <ParallaxBackground />
-      <FloatingObjects />
+      {/* <ParallaxBackground /> */}
+      {/* <FloatingObjects /> */}
 
       <div className="relative z-10">
         <Hero />

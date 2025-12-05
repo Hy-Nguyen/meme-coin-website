@@ -21,7 +21,7 @@ function ParallaxShape({
 
   return (
     <motion.div
-      className={`absolute ${shape.size} rounded-full blur-[100px]`}
+      className={`absolute ${shape.size} will-change-transform rounded-full blur-[100px]`}
       style={{
         left: shape.x,
         top: shape.y,
